@@ -29,7 +29,7 @@
     .headerDiv p{
         font-size: 1.2em;
         max-width: 700px;
-        margin: auto;
+        margin: 0;
     }
      .headerDiv figure img{
         width: 150px;
