@@ -40,7 +40,7 @@
      }
      /*Navigation */
         .menuNav{
-            display: flex;
+            display: block;
             justify-content: center;
             background-color: #333;
             padding:15px 0;
