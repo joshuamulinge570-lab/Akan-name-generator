@@ -1,0 +1,190 @@
+/* General Reset */
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    padding: 0%;
+}
+ html{
+    scroll-behavior: smooth;
+
+ }
+ body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+ }
+ /*Header Section */
+  .headerDiv{
+    background-color: #4CAF50;
+    color: linear-gradient(135deg, #4CAF50, #2E8b57);
+    padding: 30px 20px;
+    text-align: center;
+  }
+    .headerDiv h1{
+        font-size: 3em;
+        margin-bottom: 15px;
+    }
+    .headerDiv p{
+        font-size: 1.2em;
+        max-width: 700px;
+        margin: auto;
+    }
+     .headerDiv figure img{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-top: 20px;
+        border: 4px solid #fff;
+     }
+     /*Navigation */
+        .menuNav{
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding:15px 0;
+        }
+       .menuNav ul{
+        list-style: none;
+       }
+       .menuNav ul li{
+        display: inline-block;
+        margin: 0 20px;
+       }
+       .menuNav ul li a{
+        .menuNav a{
+            text-decoration: none;
+            color: #fff;
+            font-weight:bold;
+            transition: color 0.3s ease;
+        }
+    }
+
+       .menuNav ul li a:hover,   .menuNav a:hover {
+        color: #4CAF50;
+       }
+
+       /*Hero Section*/
+         .hero{
+            background-color: #fff;
+            text-align: center;
+            padding: 100px 20px;}
+
+            .hero img{
+                width: 80px;
+                max-width: 600px;
+                border-radius:15px;
+                border-radius:15px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);}
+
+            .hero p{
+                font-size: 1.5rem;
+                margin-top: 20px;
+                color: #555;
+                font-weight: bold;
+            }
+            /*Form Section*/
+            #form{
+                padding: 50px 20px;
+                display: flex;
+                justify-content: center;
+                background-color: #eef2f3;
+            }
+            .formName{
+                width: 100;
+                max-width: 600px;
+            }
+            .formBackgrund{
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+            }
+            .formBackgrund h2{
+                text-align: center;
+                margin-bottom: 25px;
+                color: #333;
+            }
+            .formDiv form {
+                display: flex;
+                flex-direction: column;
+
+            }       
+            label{
+            font-weight: bold;
+            margin-bottom: 8px;
+
+            }
+            input[type="number"],
+            select{
+                padding: 12px;
+                margin-bottom:20px;
+                border: 1px solid #333;
+                border-radius: 8px;
+                font-size: 1rem;
+
+            }
+
+            input [type="number"]:focus,
+            select:focus{
+                padding: 12px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 8px;
+                background-color: #4CAF50;
+                color: aqua;
+                font-size: 1rem;
+
+            }
+            /*Buttons */
+            .button
+            button [type="submit"] {
+                padding: 12px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 8px;
+                background-color: #4CAF50;
+                color:aqua;
+                font-size: 1rem;
+                cursor: pointer;
+                transition:background 0.3s ease;
+
+            }
+            .button.button:hover,
+            button [type="submit"]:hover{
+                background: #2E8b57;
+
+            }
+            /*Footer/Find Me */
+            .findMe{
+                display: block;
+                margin-top: 20px;
+                text-align: center;
+                font-size: 1.1rem;
+
+            }
+            /*Responsive Design */
+            @media (max-width:768px) {
+                .headerDiv h1 {
+                    font-size: 2rem;
+                }
+            }
+
+            .hero p{
+                font-size: 1.2rem;
+
+            }
+
+            .menuNav ul li {
+                display: block;
+                margin: 10px 0;
+
+            }
+            .hero img {
+            width: 95%;
+            }
+            .formBackgrund{
+                padding: 20px;
+            }
