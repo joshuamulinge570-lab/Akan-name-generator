@@ -55,7 +55,7 @@
        .menuNav ul li a{
         .menuNav a{
             text-decoration: none;
-            color: #fff;
+            color: white;
             font-weight:bold;
             transition: color 0.3s ease;
         }
