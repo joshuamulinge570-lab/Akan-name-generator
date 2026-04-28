@@ -11,7 +11,7 @@
  }
  body{
     font-family: 'Roboto', sans-serif;
-    background-color: white;
+    background-color: grey;
     color: #333;
     line-height: 1.6;
  }
@@ -22,9 +22,11 @@
     padding: 30px 20px;
     text-align: center;
   }
-    .headerDiv h1{
+    #head {
         font-size: 3em;
         margin-bottom: 15px;
+        background-color: brown;
+        color: brown;
     }
     .headerDiv p{
         font-size: 1.2em;
@@ -67,7 +69,7 @@
 
        /*Hero Section*/
          .hero{
-            background-color: #fff;
+            background-color:green;
             text-align: center;
             padding: 100px 60px;}
 
@@ -89,14 +91,14 @@
                 padding: 50px 20px;
                 display: flex;
                 justify-content: center;
-                background-color: #eef2f3;
+                background-color: green;
             }
             .formName{
                 width: 100;
                 max-width: 600px;
             }
             .formBackgrund{
-                background: white;
+                background: blue;
                 padding: 30px;
                 border-radius: 15px;
                 box-shadow: 0 4px 8px rgba(0,0,0,0.1);
