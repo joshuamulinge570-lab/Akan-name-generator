@@ -11,7 +11,7 @@ const femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 
 // Function to check if a year is a leap year
 function isLeapYear(year) {
-  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+  return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
 }
 
 function getAkanName() {
@@ -28,6 +28,9 @@ function getAkanName() {
   const month = date.getMonth() + 1; // Months are 0-based
   const day = date.getDate();
 
+  // Manual parsing avoids timezone issues
+  const [year, month, day] = dateofBirth.split("-").map(Number);
+
   // Validate February 29 for leap years
   if (month === 2 && day === 29 && !isLeapYear(year)) {
     alert(`${year} is not a leap year, so February 29 is invalid.`);
@@ -42,6 +45,9 @@ function getAkanName() {
     akanName = maleNames[dayIndex];
   } else if (gender === "female") {
     akanName = femaleNames[dayIndex];
+  } else {
+    alert("Invalid gender selected.");
+    return;
   }
 
   document.getElementById("result").textContent =
