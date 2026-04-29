@@ -1,3 +1,4 @@
+// Akan names
 const maleNames = [
   "Kwasi",
   "Kwadwo",
@@ -7,49 +8,73 @@ const maleNames = [
   "Kofi",
   "Kwame",
 ];
+
 const femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 
-// Function to check if a year is a leap year
+const daynames = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+// Leap year checker
 function isLeapYear(year) {
-  return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 }
 
+// Form submit event
+document.getElementById("form-submit").addEventListener("submit", function (e) {
+  e.preventDefault(); // Prevent page reload
+  getAkanName();
+});
+
 function getAkanName() {
-  const dateofBirth = document.getElementById("dob").value;
+  const day = parseInt(document.getElementById("date").value);
+  const month = parseInt(document.getElementById("month").value);
+  const year = parseInt(document.getElementById("year").value);
   const gender = document.getElementById("gender").value;
 
-  if (!dateofBirth || !gender) {
-    alert("Please enter your date of birth and select your gender.");
+  // Validate inputs
+  if (!day || !month || !year || !gender) {
+    alert("Please fill in all fields.");
     return;
   }
 
-  const date = new Date(dateofBirth);
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1; // Months are 0-based
-  const day = date.getDate();
-
-  // Manual parsing avoids timezone issues
-  const [year, month, day] = dateofBirth.split("-").map(Number);
-
-  // Validate February 29 for leap years
+  // Leap year validation
   if (month === 2 && day === 29 && !isLeapYear(year)) {
     alert(`${year} is not a leap year, so February 29 is invalid.`);
     return;
   }
 
-  const dayIndex = date.getDay(); // 0 (Sunday) to 6 (Saturday)
+  // Create date object
+  const birthDate = new Date(year, month - 1, day);
 
-  let akanName;
+  // Invalid date check
+  if (
+    birthDate.getFullYear() !== year ||
+    birthDate.getMonth() !== month - 1 ||
+    birthDate.getDate() !== day
+  ) {
+    alert("Invalid date entered.");
+    return;
+  }
+
+  // Day index
+  const dayIndex = birthDate.getDay();
+
+  let akanName = "";
 
   if (gender === "male") {
     akanName = maleNames[dayIndex];
   } else if (gender === "female") {
     akanName = femaleNames[dayIndex];
-  } else {
-    alert("Invalid gender selected.");
-    return;
   }
 
-  document.getElementById("result").textContent =
-    `Your Akan name is ${akanName}`;
+  // Display result
+  const resultbox = document.getElementById("result");
+  resultbox.textContent = `You were born on a ${daynames[dayIndex]} and your Akan name is ${akanName}.`;
 }
