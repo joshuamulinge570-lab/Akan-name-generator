@@ -2,8 +2,8 @@ const maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"
 const femaleNames = ["Akousa", "Adwoa", "Abenna", "Akua", "Yaa", "Afua", "Ama"];
 
 function getAkanName() {
-    const dateofBirth = document.getElementById("dob").Value;
-    const gender = document.getElementById("gender").Value;
+    const dateofBirth = document.getElementById("dob").value;
+    const gender = document.getElementById("gender").value;
 
     if (!dateofBirth || !gender) {
         alert("Please enter your date of birth and select your gender.");
